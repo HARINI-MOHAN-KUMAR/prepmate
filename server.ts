@@ -9,6 +9,12 @@ import apiRouter from "./server/routes";
 import { db } from "./server/db";
 import { getEmbedding, isGeminiConfigured } from "./server/gemini";
 
+// Safety: In production require an explicitly set JWT secret to avoid insecure defaults
+if (process.env.NODE_ENV === "production" && !process.env.JWT_SECRET) {
+  console.error("FATAL: JWT_SECRET is not set. Set JWT_SECRET in production environment and restart.");
+  process.exit(1);
+}
+
 /**
  * Background worker to pre-embed questions in the question bank at startup 
  * if Gemini API key is configured. This facilitates ultra-fast RAG querying.
@@ -85,7 +91,9 @@ async function startServer() {
     app.use(Sentry.Handlers.requestHandler());
   }
   const requestedPort = Number(process.env.PORT || 3000);
-  const PORT = await getAvailablePort(requestedPort);
+  const PORT = process.env.NODE_ENV === "production"
+    ? requestedPort
+    : await getAvailablePort(requestedPort);
 
   // Middleware for parsing JSON requests
   app.use(express.json());

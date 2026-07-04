@@ -396,7 +396,10 @@ class LocalDatabase {
 
   private save() {
     try {
-      fs.writeFileSync(DB_FILE, JSON.stringify(this.data, null, 2), "utf-8");
+      // Atomic write: write to a temp file then rename to avoid partial writes
+      const tmpFile = DB_FILE + ".tmp";
+      fs.writeFileSync(tmpFile, JSON.stringify(this.data, null, 2), "utf-8");
+      fs.renameSync(tmpFile, DB_FILE);
     } catch (error) {
       console.error("Failed to save database:", error);
     }

@@ -16,6 +16,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "express-rate-limit": "^6.7.0",
     "pm2": "^5.2.0",
     "compression": "^1.7.4",
     "@google/genai": "^2.4.0",

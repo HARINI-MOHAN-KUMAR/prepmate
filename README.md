@@ -15,7 +15,7 @@ View your app in AI Studio: https://ai.studio/apps/56eef892-71b4-4985-8405-c9afa
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Copy or rename `.env.example` to `.env` and set your secrets there, including `GEMINI_API_KEY`.
 3. Run the app:
    `npm run dev`
 
@@ -62,4 +62,36 @@ npm run start:prod
 
 ## CI
 
-A GitHub Actions workflow is provided at `.github/workflows/ci.yml` which runs build and flow tests.
+A GitHub Actions workflow is provided at `.github/workflows/render-deploy.yml` which triggers a Render deploy when you push to `main`.
+
+## Deploying to Render
+
+This project includes a `render.yaml` manifest configured to deploy the service using Docker. Follow these steps:
+
+1. Push your repository to GitHub (or connect your Git provider to Render).
+2. In Render, create a new service by selecting "Connect a repository" and choose the repository/branch.
+3. Render will read `render.yaml` and create the `prepmate-ai` web service. It uses the `Dockerfile` to build the image.
+4. Add the required environment variables in the Render service settings (Dashboard → Environment):
+   - `JWT_SECRET` (required in production)
+   - `MONGODB_URI` (recommended for production)
+   - `GEMINI_API_KEY` (optional — leaving it empty uses offline fallback)
+   - `SENTRY_DSN` (optional)
+5. Trigger a manual deploy or enable automatic deploys.
+
+Notes:
+- Do NOT commit real secrets to the repository. Use the Render dashboard to store secrets.
+- The project uses a local JSON DB when `MONGODB_URI` is not provided; for production use a managed MongoDB and set `MONGODB_URI`.
+- The service exposes a health check at `/api/health`.
+
+If you want, I can create a `.env.example` file with placeholders (non-secret) and update `render.yaml` or help you set the secrets in your Render dashboard.
+
+### Optional: Automatic Deploy via GitHub Actions
+
+You can trigger Render deploys automatically when you push to `main` by adding two repository secrets and using the provided workflow `.github/workflows/render-deploy.yml`.
+
+1. In your GitHub repository settings → Secrets → Actions, add:
+   - `RENDER_API_KEY` — a Render API key with deploy permissions
+   - `RENDER_SERVICE_ID` — your Render service id (found in Render service settings)
+2. Push to `main` and the workflow will call the Render API to create a new deploy. Render will build the image from your repo using the `Dockerfile`.
+
+Note: This workflow only triggers a deploy request — Render performs the build. Monitor the Render dashboard for build logs and runtime environment status.

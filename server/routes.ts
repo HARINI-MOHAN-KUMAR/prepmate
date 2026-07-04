@@ -1,4 +1,5 @@
 import express, { Response } from "express";
+import rateLimit from "express-rate-limit";
 import { db } from "./db";
 import { 
   generateToken, 
@@ -23,9 +24,17 @@ import {
 
 const router = express.Router();
 
+// Rate limiter for authentication endpoints to prevent brute-force abuse
+const authLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 10, // limit each IP to 10 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 // --- AUTH ENDPOINTS ---
 
-router.post("/auth/register", (req, res) => {
+router.post("/auth/register", authLimiter, (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email) {
@@ -49,7 +58,7 @@ router.post("/auth/register", (req, res) => {
   }
 });
 
-router.post("/auth/login", (req, res) => {
+router.post("/auth/login", authLimiter, (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email) {
@@ -185,10 +194,14 @@ router.post("/sessions", requireAuth, async (req: AuthenticatedRequest, res) => 
     const searchString = `${targetRole} ${experienceLevel} ${focusDimension ? focusDimension : ""}`;
     const queryEmbedding = await getEmbedding(searchString);
     const candidates = db.searchQuestions(targetRole, experienceLevel, queryEmbedding || undefined, targetCompany);
-
     // 3. Select the first highly relevant question directly from our candidate bank, saving an API call
-    const questionText = candidates[0].questionText;
-    const matchedQuestion = db.getQuestionBank().find(q => q.questionText === questionText || q.id === candidates[0].id);
+    // Defensive: ensure candidates exist and have questionText
+    let questionText = "No question available";
+    let matchedQuestion = undefined;
+    if (candidates && candidates.length > 0) {
+      questionText = candidates[0].questionText || candidates[0].id || "No question available";
+      matchedQuestion = db.getQuestionBank().find(q => q.questionText === questionText || q.id === candidates[0].id);
+    }
 
     // 4. Record first turn with ideal answer points populated
     const firstTurn: InterviewTurn = {
@@ -199,7 +212,7 @@ router.post("/sessions", requireAuth, async (req: AuthenticatedRequest, res) => 
       feedback: null,
       follow_up_topic: null,
       timestamp: new Date().toISOString(),
-      idealAnswerPoints: matchedQuestion?.idealAnswerPoints || candidates[0].idealAnswerPoints || []
+      idealAnswerPoints: matchedQuestion?.idealAnswerPoints || (candidates && candidates[0] && candidates[0].idealAnswerPoints) || []
     };
 
     session.turns.push(firstTurn);

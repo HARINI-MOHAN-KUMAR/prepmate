@@ -152,7 +152,32 @@ export default function App() {
       console.log("handleStartSession response", { status: res.status, ok: res.ok, data });
       if (!res.ok) throw new Error(data.error || "Failed to start interview session");
       
-      setActiveSession(data);
+      // Defensive: if the server returned a session without turns, poll the session endpoint
+      // for a short period to allow the server to populate the first question (RAG or async steps).
+      if (!data.turns || data.turns.length === 0) {
+        const maxAttempts = 5;
+        let attempt = 0;
+        let refreshed = data;
+        while (attempt < maxAttempts && (!refreshed.turns || refreshed.turns.length === 0)) {
+          attempt++;
+          try {
+            // wait with exponential backoff (initial 300ms)
+            await new Promise(r => setTimeout(r, 300 * Math.pow(2, attempt - 1)));
+            const refetch = await fetch(`/api/sessions/${data.id}`, {
+              headers: { Authorization: `Bearer ${token}` }
+            });
+            if (refetch.ok) {
+              refreshed = await refetch.json();
+              if (refreshed.turns && refreshed.turns.length > 0) break;
+            }
+          } catch (e) {
+            // ignore and retry
+          }
+        }
+        setActiveSession(refreshed);
+      } else {
+        setActiveSession(data);
+      }
       setActiveView("room");
     } catch (err: any) {
       alert(err.message || "An error occurred starting the interview.");

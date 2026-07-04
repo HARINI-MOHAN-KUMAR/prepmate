@@ -594,7 +594,8 @@
       "finalReport": null,
       "targetCompany": null,
       "practiceMode": "weakness-drill",
-      "focusDimension": "Depth"
+      "focusDimension": "Depth",
+      "starred": false
     },
     {
       "id": "s_4ahesfmcz",
@@ -1830,6 +1831,424 @@
       "finalReport": null,
       "practiceMode": "standard",
       "_id": "6a492d648e469db7ff65a5af"
+    },
+    {
+      "id": "s_5urib7wcy",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Frontend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T16:47:53.364Z",
+      "currentTurnIndex": 1,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "Describe your approach to optimizing a slow React web application. What metrics would you track, and what techniques would you implement?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T16:47:54.366Z",
+          "idealAnswerPoints": [
+            "Code splitting & lazy loading: Only load the JavaScript required for the current route.",
+            "Asset optimization: Compressing images, serving modern formats (WebP), minifying CSS/JS, and utilizing CDN caching.",
+            "Reducing blocking time: Deferring non-critical scripts (`async` or `defer`), and optimizing critical rendering path.",
+            "Utilizing Core Web Vitals (LCP, FID/INP, CLS) to measure page visual load, interactivity, and layout stability."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "weakness-drill",
+      "focusDimension": "Depth",
+      "_id": "6a4939398e469db7ff65a5b0"
+    },
+    {
+      "id": "s_qoihl0cx2",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Frontend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T16:49:09.658Z",
+      "currentTurnIndex": 1,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "Describe your approach to optimizing a slow React web application. What metrics would you track, and what techniques would you implement?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T16:49:10.937Z",
+          "idealAnswerPoints": [
+            "Code splitting & lazy loading: Only load the JavaScript required for the current route.",
+            "Asset optimization: Compressing images, serving modern formats (WebP), minifying CSS/JS, and utilizing CDN caching.",
+            "Reducing blocking time: Deferring non-critical scripts (`async` or `defer`), and optimizing critical rendering path.",
+            "Utilizing Core Web Vitals (LCP, FID/INP, CLS) to measure page visual load, interactivity, and layout stability."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "standard",
+      "_id": "6a4939858e469db7ff65a5b1"
+    },
+    {
+      "id": "s_w9ugsj1bu",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Backend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T16:52:18.541Z",
+      "currentTurnIndex": 1,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "What is a race condition in backend systems? How would you identify and resolve a race condition when two users try to purchase the last available ticket simultaneously?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T16:52:25.729Z",
+          "idealAnswerPoints": [
+            "A race condition occurs when multiple threads or processes access and manipulate shared data concurrently, and the outcome depends on the order of execution.",
+            "Can be prevented using synchronization mechanisms like mutexes, semaphores, or locks (optimistic and pessimistic).",
+            "Pessimistic locking locks records at the database level (e.g., SELECT ... FOR UPDATE), blocking others until the transaction commits.",
+            "Optimistic locking uses a version or timestamp column to detect concurrent modifications, failing or retrying the operation if conflict occurs."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "weakness-drill",
+      "focusDimension": "Depth",
+      "_id": "6a493a438e469db7ff65a5b2"
+    },
+    {
+      "id": "s_y5b8ur8cm",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Backend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T16:58:23.839Z",
+      "currentTurnIndex": 1,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "What is a race condition in backend systems? How would you identify and resolve a race condition when two users try to purchase the last available ticket simultaneously?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T16:58:30.074Z",
+          "idealAnswerPoints": [
+            "A race condition occurs when multiple threads or processes access and manipulate shared data concurrently, and the outcome depends on the order of execution.",
+            "Can be prevented using synchronization mechanisms like mutexes, semaphores, or locks (optimistic and pessimistic).",
+            "Pessimistic locking locks records at the database level (e.g., SELECT ... FOR UPDATE), blocking others until the transaction commits.",
+            "Optimistic locking uses a version or timestamp column to detect concurrent modifications, failing or retrying the operation if conflict occurs."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "standard",
+      "_id": "6a493bb08e469db7ff65a5b3"
+    },
+    {
+      "id": "s_07tsnr2fi",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Frontend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T16:59:11.989Z",
+      "currentTurnIndex": 1,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "Describe your approach to optimizing a slow React web application. What metrics would you track, and what techniques would you implement?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T16:59:14.806Z",
+          "idealAnswerPoints": [
+            "Code splitting & lazy loading: Only load the JavaScript required for the current route.",
+            "Asset optimization: Compressing images, serving modern formats (WebP), minifying CSS/JS, and utilizing CDN caching.",
+            "Reducing blocking time: Deferring non-critical scripts (`async` or `defer`), and optimizing critical rendering path.",
+            "Utilizing Core Web Vitals (LCP, FID/INP, CLS) to measure page visual load, interactivity, and layout stability."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "standard",
+      "_id": "6a493be08e469db7ff65a5b4"
+    },
+    {
+      "id": "s_0vhmo0t75",
+      "userId": "u_fkj9ghhm1",
+      "userName": "Demo+test",
+      "targetRole": "backend",
+      "experienceLevel": "Entry",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T17:23:42.395Z",
+      "currentTurnIndex": 2,
+      "maxTurns": 2,
+      "turns": [
+        {
+          "question": "What is a race condition in backend systems? How would you identify and resolve a race condition when two users try to purchase the last available ticket simultaneously?",
+          "answer": "This is an automated test answer.",
+          "action": "ask",
+          "scores": {
+            "correctness": 6,
+            "depth": 4,
+            "communication": 8,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: Indexes speed up data retrieval queries (SELECT) at the cost of slower writes (INSERT, UPDATE, DELETE).",
+          "follow_up_topic": "Database Indexing",
+          "timestamp": "2026-07-04T17:23:43.717Z",
+          "idealAnswerPoints": [
+            "A race condition occurs when multiple threads or processes access and manipulate shared data concurrently, and the outcome depends on the order of execution.",
+            "Can be prevented using synchronization mechanisms like mutexes, semaphores, or locks (optimistic and pessimistic).",
+            "Pessimistic locking locks records at the database level (e.g., SELECT ... FOR UPDATE), blocking others until the transaction commits.",
+            "Optimistic locking uses a version or timestamp column to detect concurrent modifications, failing or retrying the operation if conflict occurs."
+          ]
+        },
+        {
+          "question": "Explain three caching strategies (e.g. Cache-Aside, Write-Through, Write-Back) and discuss how to handle cache invalidation.",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T17:23:45.040Z",
+          "idealAnswerPoints": [
+            "Cache-Aside: The app queries the cache; if a miss occurs, it queries the DB, stores it in the cache, and returns.",
+            "Write-Through: The app writes data to the cache, which synchronously updates the database.",
+            "Write-Back (Write-Behind): The app writes to the cache, and a background task asynchronously batch-writes to the database.",
+            "Eviction policies (like LRU, LFU, TTL) are necessary to prevent caches from running out of memory."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "standard",
+      "_id": "6a49419e8e469db7ff65a5b5",
+      "isOfflineMode": true
+    },
+    {
+      "id": "s_yk1gu1rdg",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Frontend",
+      "experienceLevel": "Entry Level",
+      "status": "in_progress",
+      "createdAt": "2026-07-04T17:27:31.575Z",
+      "currentTurnIndex": 2,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "Describe your approach to optimizing a slow React web application. What metrics would you track, and what techniques would you implement?",
+          "answer": "jj",
+          "action": "ask",
+          "scores": {
+            "correctness": 3,
+            "depth": 4,
+            "communication": 4,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: The Virtual DOM is a lightweight, in-memory representation of the real DOM nodes.",
+          "follow_up_topic": "Virtual DOM & Reconciliation",
+          "timestamp": "2026-07-04T17:27:32.837Z",
+          "idealAnswerPoints": [
+            "Code splitting & lazy loading: Only load the JavaScript required for the current route.",
+            "Asset optimization: Compressing images, serving modern formats (WebP), minifying CSS/JS, and utilizing CDN caching.",
+            "Reducing blocking time: Deferring non-critical scripts (`async` or `defer`), and optimizing critical rendering path.",
+            "Utilizing Core Web Vitals (LCP, FID/INP, CLS) to measure page visual load, interactivity, and layout stability."
+          ]
+        },
+        {
+          "question": "How does React's Virtual DOM and the reconciliation algorithm work? Why is direct DOM manipulation considered slow?",
+          "answer": null,
+          "action": "ask",
+          "scores": null,
+          "feedback": null,
+          "follow_up_topic": null,
+          "timestamp": "2026-07-04T17:28:05.640Z",
+          "idealAnswerPoints": [
+            "The Virtual DOM is a lightweight, in-memory representation of the real DOM nodes.",
+            "When state changes, a new Virtual DOM tree is created.",
+            "The reconciliation process ('diffing' algorithm) compares the new tree with the previous one to find the minimum set of changes required.",
+            "React updates only the dirty elements in the actual DOM, which is much faster than full-page layout recalculations."
+          ]
+        }
+      ],
+      "finalReport": null,
+      "practiceMode": "standard",
+      "_id": "6a4942838e469db7ff65a5b6",
+      "isOfflineMode": true
+    },
+    {
+      "id": "s_d6yt0b9y3",
+      "userId": "u_8en191b6p",
+      "userName": "Mharinimohan1997",
+      "targetRole": "SDE-1 Frontend",
+      "experienceLevel": "Entry Level",
+      "status": "completed",
+      "createdAt": "2026-07-04T17:28:47.293Z",
+      "currentTurnIndex": 4,
+      "maxTurns": 4,
+      "turns": [
+        {
+          "question": "Describe your approach to optimizing a slow React web application. What metrics would you track, and what techniques would you implement?",
+          "answer": "hii",
+          "action": "ask",
+          "scores": {
+            "correctness": 3,
+            "depth": 4,
+            "communication": 4,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: The Virtual DOM is a lightweight, in-memory representation of the real DOM nodes.",
+          "follow_up_topic": "Virtual DOM & Reconciliation",
+          "timestamp": "2026-07-04T17:28:49.303Z",
+          "idealAnswerPoints": [
+            "Code splitting & lazy loading: Only load the JavaScript required for the current route.",
+            "Asset optimization: Compressing images, serving modern formats (WebP), minifying CSS/JS, and utilizing CDN caching.",
+            "Reducing blocking time: Deferring non-critical scripts (`async` or `defer`), and optimizing critical rendering path.",
+            "Utilizing Core Web Vitals (LCP, FID/INP, CLS) to measure page visual load, interactivity, and layout stability."
+          ]
+        },
+        {
+          "question": "How does React's Virtual DOM and the reconciliation algorithm work? Why is direct DOM manipulation considered slow?",
+          "answer": "hii",
+          "action": "ask",
+          "scores": {
+            "correctness": 3,
+            "depth": 4,
+            "communication": 4,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: Prop drilling is passing state down through multiple levels of components that don't need the data themselves.",
+          "follow_up_topic": "State Management & Prop Drilling",
+          "timestamp": "2026-07-04T17:31:21.399Z",
+          "idealAnswerPoints": [
+            "The Virtual DOM is a lightweight, in-memory representation of the real DOM nodes.",
+            "When state changes, a new Virtual DOM tree is created.",
+            "The reconciliation process ('diffing' algorithm) compares the new tree with the previous one to find the minimum set of changes required.",
+            "React updates only the dirty elements in the actual DOM, which is much faster than full-page layout recalculations."
+          ]
+        },
+        {
+          "question": "What is prop drilling in React, and how do you solve it? Compare React Context with a global state library like Zustand.",
+          "answer": "ho\\",
+          "action": "ask",
+          "scores": {
+            "correctness": 3,
+            "depth": 4,
+            "communication": 4,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: The JS Event Loop processes the call stack, microtask queue, and macrotask queue sequentially.",
+          "follow_up_topic": "JavaScript Event Loop",
+          "timestamp": "2026-07-04T17:31:53.851Z",
+          "idealAnswerPoints": [
+            "Prop drilling is passing state down through multiple levels of components that don't need the data themselves.",
+            "Can be solved using React Context API for global theme, auth, or lightweight sharing.",
+            "State management libraries like Redux, Zustand, or Recoil are ideal for highly interactive, complex global states.",
+            "Component co-location: Keeping state as local as possible prevents unnecessary re-renders in parent hierarchies."
+          ]
+        },
+        {
+          "question": "Detail the JS Event Loop sequence. What is the difference in execution priority between microtasks (e.g. Promise.then) and macrotasks (e.g. setTimeout)?",
+          "answer": "hj",
+          "action": "ask",
+          "scores": {
+            "correctness": 3,
+            "depth": 4,
+            "communication": 4,
+            "problem_solving": 5
+          },
+          "feedback": "[Offline Mode] Good attempt. You explained the fundamentals. To improve further, make sure to cover structural details such as: Virtual scrolling improves DOM performance by only rendering elements visible within the viewport.",
+          "follow_up_topic": "Virtual Scrolling / Lists",
+          "timestamp": "2026-07-04T17:32:13.266Z",
+          "idealAnswerPoints": [
+            "The JS Event Loop processes the call stack, microtask queue, and macrotask queue sequentially.",
+            "Microtasks (Promises, queueMicrotask) run immediately after the current script executes and before rendering.",
+            "Macrotasks (setTimeout, setInterval) are deferred to subsequent ticks of the event loop.",
+            "The browser rendering cycle runs rendering layout and paint operations between macrotasks."
+          ]
+        }
+      ],
+      "finalReport": {
+        "overallScore": 40,
+        "strengths": [
+          "Demonstrated good theoretical familiarity with target role fundamentals.",
+          "Clear attempt to structure core concepts concisely.",
+          "Active engagement with all questions."
+        ],
+        "gaps": [
+          "Depth can be increased by detailing operational trade-offs.",
+          "Practical case-studies and real-world system architecture examples were thin."
+        ],
+        "personalizedPlan": [
+          "Review official documentation and core system design patterns for SDE-1 Frontend.",
+          "Conduct daily whiteboard designs focusing on concurrency and memory optimization.",
+          "Practice structured explanation frameworks like the STAR method (Situation, Task, Action, Result)."
+        ],
+        "summary": "This is a portfolio-grade mock evaluation compiled offline. The candidate demonstrated a resilient approach to foundational concepts but can elevate performance by deep-diving into practical edge-cases and tradeoffs.",
+        "recommendation": "Needs Core Revision",
+        "nextStepsRoadmap": {
+          "dimension": "Accuracy",
+          "score": 3,
+          "topics": [
+            {
+              "title": "Big-O Time & Space Complexity",
+              "description": "Learn to systematically evaluate best, average, and worst-case bounds of algorithms."
+            },
+            {
+              "title": "Core Data Structures & Operations",
+              "description": "Master insert, delete, and lookup complexities of Arrays, Linked Lists, Stacks, Queues, Trees, and Graphs."
+            },
+            {
+              "title": "Standard Language Specifications",
+              "description": "Deepen understanding of core runtimes (e.g. JS Event Loop, Java memory model, Python GIL, database ACID constraints)."
+            }
+          ],
+          "resources": [
+            {
+              "name": "LeetCode Practice Platform",
+              "url": "https://leetcode.com",
+              "type": "interactive"
+            },
+            {
+              "name": "MDN Web Standards Documentation",
+              "url": "https://developer.mozilla.org",
+              "type": "documentation"
+            },
+            {
+              "name": "Introduction to Algorithms (CLRS Book)",
+              "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+              "type": "book"
+            },
+            {
+              "name": "roadmap.sh - Developer Roadmaps",
+              "url": "https://roadmap.sh",
+              "type": "interactive"
+            }
+          ]
+        },
+        "isOfflineMode": true
+      },
+      "practiceMode": "standard",
+      "_id": "6a4942cf8e469db7ff65a5b7",
+      "timerSeconds": 120,
+      "isOfflineMode": true
     }
   ],
   "questionBank": [
