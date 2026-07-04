@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5e9" />
+      <stop offset="1" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="12" fill="url(#g)" />
+  <g fill="#fff" opacity="0.95">
+    <circle cx="160" cy="150" r="36" />
+    <rect x="220" y="110" width="140" height="80" rx="12" />
+    <path d="M420 140h320v20H420zM420 180h220v10H420z" />
+    <g transform="translate(760,70)">
+      <rect x="0" y="0" width="320" height="160" rx="12" fill="#ffffff11" />
+      <circle cx="60" cy="50" r="28" />
+      <rect x="110" y="35" width="160" height="16" rx="6" />
+      <rect x="110" y="65" width="110" height="10" rx="5" />
+    </g>
+  </g>
+  <text x="40" y="55" fill="#fff" font-family="Inter, Arial" font-size="28" font-weight="700">PrepMate AI — Tech Interview Practice</text>
+  <text x="40" y="90" fill="#fff" font-family="Inter, Arial" font-size="14">Practice system design, algorithms, data, and frontend skills with AI feedback.</text>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "PrepMate AI",
+  "description": "An agentic, RAG-powered placement preparation platform for engineering students that conducts adaptive mock interviews and produces structured evaluations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
