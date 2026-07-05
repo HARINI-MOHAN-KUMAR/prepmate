@@ -88,7 +88,10 @@ async function startServer() {
   // Initialize Sentry if DSN present
   if (process.env.SENTRY_DSN) {
     Sentry.init({ dsn: process.env.SENTRY_DSN, environment: process.env.NODE_ENV || "development" });
-    app.use(Sentry.Handlers.requestHandler());
+    const sentryRequestHandler = (Sentry as any).Handlers?.requestHandler;
+    if (typeof sentryRequestHandler === "function") {
+      app.use(sentryRequestHandler());
+    }
   }
   const requestedPort = Number(process.env.PORT || 3000);
   const PORT = process.env.NODE_ENV === "production"

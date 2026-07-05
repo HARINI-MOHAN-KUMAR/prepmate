@@ -97,6 +97,10 @@ export interface DashboardStats {
   averageScores: RubricScores;
   latestScore: number;
   roleCounts: Record<string, number>;
+  readinessScore: number;
+  readinessLabel: string;
+  weakestDimension: string;
+  recommendedFocus: string[];
   history: {
     sessionId: string;
     targetRole: string;

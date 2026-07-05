@@ -359,13 +359,61 @@ export default function Dashboard({ stats, onStartNewSession, onViewSessionRepor
             </div>
           </div>
 
-          {/* Historical progression graph */}
-          <div className="bg-[#0E0E10] border border-white/10 rounded-2xl p-6 space-y-4 shadow-xl">
-            <h3 className="text-white font-bold text-sm font-mono uppercase tracking-widest flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-cyan-400" />
-              Score Progression Trend
-            </h3>
-            <HistoryLineChart history={stats.history} />
+          <div className="grid gap-4 lg:grid-cols-[1.3fr_0.9fr]">
+            <div className="bg-[#0E0E10] border border-white/10 rounded-2xl p-6 space-y-4 shadow-xl">
+              <h3 className="text-white font-bold text-sm font-mono uppercase tracking-widest flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-cyan-400" />
+                Score Progression Trend
+              </h3>
+              <HistoryLineChart history={stats.history} />
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-[#0E0E10] border border-white/10 rounded-2xl p-6 shadow-xl">
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div>
+                    <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500">Readiness Snapshot</p>
+                    <h3 className="text-lg font-bold text-white">{stats.readinessLabel}</h3>
+                  </div>
+                  <div className="rounded-2xl bg-cyan-500/10 px-3 py-2 text-cyan-300 text-xs font-semibold border border-cyan-500/20">
+                    {stats.readinessScore}%
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-[11px] font-mono text-slate-400">
+                  <div className="rounded-2xl bg-white/5 p-3 border border-white/10">
+                    <p className="text-[10px] uppercase tracking-widest text-slate-500">Weakest Dimension</p>
+                    <p className="mt-2 text-white font-semibold capitalize">{stats.weakestDimension.replace("_", " ")}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/5 p-3 border border-white/10">
+                    <p className="text-[10px] uppercase tracking-widest text-slate-500">Latest Score</p>
+                    <p className="mt-2 text-white font-semibold">{stats.latestScore}%</p>
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-2">Focus Recommendations</p>
+                  <ul className="space-y-2 text-slate-300 text-xs">
+                    {stats.recommendedFocus.slice(0, 3).map((item, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="mt-0.5 inline-flex h-2 w-2 rounded-full bg-cyan-400" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-[#0E0E10] border border-white/10 rounded-2xl p-6 shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <UserCheck className="w-5 h-5 text-emerald-400" />
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-slate-500">Industry polish</p>
+                    <h3 className="text-white font-bold text-base">Elevate prep from demo to placement-ready</h3>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Transform each mock interview into a development plan with actionable next steps, role-specific readiness checks, and a professional candidate progression story.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* AI Career Coach Panel Promo Card */}

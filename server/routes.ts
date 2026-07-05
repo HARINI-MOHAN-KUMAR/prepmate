@@ -414,6 +414,14 @@ router.get("/stats", requireAuth, (req: AuthenticatedRequest, res) => {
         sessionCount: 0,
         averageScores: { correctness: 0, depth: 0, communication: 0, problem_solving: 0 },
         latestScore: 0,
+        readinessScore: 0,
+        readinessLabel: "Foundation Builder",
+        weakestDimension: "communication",
+        recommendedFocus: [
+          "Practice concise structures using STAR",
+          "Build technical depth with example systems",
+          "Rehearse clear transitions and conclusions"
+        ],
         roleCounts: {},
         history: []
       });
@@ -498,11 +506,60 @@ router.get("/stats", requireAuth, (req: AuthenticatedRequest, res) => {
 
     const latestSession = sortedSessions[sortedSessions.length - 1];
     const latestScore = latestSession.finalReport?.overallScore || 0;
+    const readinessScore = Math.round((
+      averageScores.correctness * 0.24 +
+      averageScores.depth * 0.32 +
+      averageScores.communication * 0.22 +
+      averageScores.problem_solving * 0.22
+    ) * 10);
+    const readinessLabel = readinessScore >= 85
+      ? "Recruiter-Ready"
+      : readinessScore >= 70
+        ? "Interview-Ready"
+        : readinessScore >= 55
+          ? "Needs Polish"
+          : "Foundation Builder";
+
+    const weakestDimension = Object.entries(averageScores)
+      .sort((a, b) => a[1] - b[1])[0][0] as keyof typeof averageScores;
+
+    const recommendedFocusMap: Record<string, string[]> = {
+      correctness: [
+        "Refine answer accuracy with precise technical definitions.",
+        "Double-check terms and eliminate ambiguous assertions.",
+        "Tie your response to the exact problem requirement."
+      ],
+      depth: [
+        "Use architecture and tradeoff details in every response.",
+        "Describe performance implications and real-world constraints.",
+        "Explain why you chose one approach over alternatives."
+      ],
+      communication: [
+        "Structure answers with Situation, Action, and Result.",
+        "Use transitional phrases to keep your flow coherent.",
+        "Speak in concise, professional sentences with confidence."
+      ],
+      problem_solving: [
+        "Enumerate candidate solutions before choosing one.",
+        "Surface edge cases and mitigation strategies.",
+        "Show how you validate correctness and scalability."
+      ]
+    };
+
+    const recommendedFocus = recommendedFocusMap[weakestDimension] || [
+      "Review your latest mock interview report and rehearse the lowest-rated dimension.",
+      "Use targeted examples to improve depth and clarity.",
+      "Build one focused study checklist for your next practice session."
+    ];
 
     return res.json({
       sessionCount: sessions.length,
       averageScores,
       latestScore,
+      readinessScore,
+      readinessLabel,
+      weakestDimension,
+      recommendedFocus,
       roleCounts,
       history
     });
