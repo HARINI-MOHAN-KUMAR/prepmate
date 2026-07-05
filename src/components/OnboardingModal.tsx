@@ -11,22 +11,22 @@ const STEPS = [
   {
     title: "Welcome to PrepMate AI",
     desc: "Practice technical interviews with AI-guided feedback on depth, correctness, and communication.",
-    img: "/assets/images/tech-hero.svg"
+    img: "/images/tech-hero.svg"
   },
   {
     title: "Backend & System Design",
     desc: "Focus on scalability, concurrency, caching, and database tradeoffs.",
-    img: "/assets/images/backend.svg"
+    img: "/images/backend.svg"
   },
   {
     title: "Frontend & Performance",
     desc: "Practice rendering, state management, and performance tradeoffs for client apps.",
-    img: "/assets/images/frontend.svg"
+    img: "/images/frontend.svg"
   },
   {
     title: "Data & ML",
     desc: "Sharpen SQL, analytics, or ML reasoning and model evaluation skills.",
-    img: "/assets/images/data.svg"
+    img: "/images/data.svg"
   }
 ];
 

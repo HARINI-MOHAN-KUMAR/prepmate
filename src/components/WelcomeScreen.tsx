@@ -78,8 +78,8 @@ export default function WelcomeScreen({ userName, onStartSession, loading }: Wel
           </h2>
           <div className="mt-4 hidden md:block">
               <picture>
-                <source srcSet="/assets/images/tech-hero.svg" type="image/svg+xml" />
-                <img src="/assets/images/tech-hero.svg" alt="tech hero" loading="lazy" decoding="async" className="rounded-xl shadow-xl w-full max-w-[760px]" />
+                <source srcSet="/images/tech-hero.svg" type="image/svg+xml" />
+                <img src="/images/tech-hero.svg" alt="tech hero" loading="lazy" decoding="async" className="rounded-xl shadow-xl w-full max-w-[760px]" />
               </picture>
           </div>
           <p className="text-slate-400 mt-1 text-sm">
@@ -122,7 +122,7 @@ export default function WelcomeScreen({ userName, onStartSession, loading }: Wel
                       <IconComp className="w-5 h-5" />
                     </div>
                     {/* role thumbnail */}
-                    <img src={`/assets/images/${role.id === 'be' ? 'backend' : role.id === 'fe' ? 'frontend' : role.id === 'da' ? 'data' : 'ml'}.svg`} alt="role" className="w-14 h-14 rounded-md bg-white/3 p-1" />
+                    <img src={`/images/${role.id === 'be' ? 'backend' : role.id === 'fe' ? 'frontend' : role.id === 'da' ? 'data' : 'ml'}.svg`} alt="role" className="w-14 h-14 rounded-md bg-white/3 p-1" />
                   </div>
                   <h4 className="text-white font-bold text-sm mb-1">{role.title}</h4>
                   <p className="text-slate-400 text-xs leading-relaxed">{role.desc}</p>
