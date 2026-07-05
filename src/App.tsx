@@ -246,7 +246,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-slate-200 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#0A0A0B] text-slate-200 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-white overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.14),transparent_20%)]" />
+        <div className="absolute left-[-6%] top-8 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl animate-pulse-slow" />
+        <div className="absolute right-[-8%] top-1/4 h-64 w-64 rounded-full bg-slate-400/10 blur-3xl animate-pulse-slow animation-delay-2000" />
+        <div className="absolute left-1/2 top-2/3 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl animate-pulse-slow animation-delay-4000" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0)_40%),linear-gradient(90deg,rgba(255,255,255,0.02)_0%,rgba(255,255,255,0)_20%)]" />
+      </div>
       {/* HUD Header */}
       {token && user && (
         <header className="sticky top-0 z-50 bg-[#0E0E10]/95 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between">
